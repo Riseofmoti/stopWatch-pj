@@ -1,0 +1,232 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.stopwatch {
+    font-size: 80px;
+    color: red;
+    margin-bottom: 50px;
+}
+.btnContainer {
+    display: flex;
+    justify-content: space-around;
+}
+button {
+    margin: 0 10px;
+    width: 70px;
+    height: 30px;
+    outline: none;
+    font-weight: bold;
+    background-color: darkviolet;
+    box-shadow: 0 0 10px darkviolet,0 0 20px darkviolet,0 0 30px darkviolet;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(wp8093006-purple-monster-wallpapers.jpg);
+    background-size: 250vh;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.box {
+    width: 380px;
+    height: 420px;
+    position: relative;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.box form {
+    position: absolute;
+    inset: 4px;
+    background-image:url(edit.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    padding: 50px 40px;
+    z-index: 2;
+}
+.box::before {
+    content: '';
+    position:absolute;
+    width: 380px;
+    height: 420px;
+    top: -50%;
+    left: -50%;
+    background: linear-gradient(0deg,transparent,transparent,red,red,red);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.box::after {
+    content: '';
+    position:absolute;
+    width: 380px;
+    height: 420px;
+    top: -50%;
+    left: -50%;
+    background: linear-gradient(0deg,transparent,transparent,red,red,red);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+.borderLine {
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+.borderLine::before {
+    content: '';
+    position:absolute;
+    width: 380px;
+    height: 420px;
+    top: -50%;
+    left: -50%;
+    background: linear-gradient(0deg,transparent,transparent,blueviolet,blueviolet,blueviolet);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.borderLine::after {
+    content: '';
+    position:absolute;
+    width: 380px;
+    height: 420px;
+    top: -50%;
+    left: -50%;
+    background: linear-gradient(0deg,transparent,transparent,blueviolet,blueviolet,blueviolet);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+
+@media (max-width: 280px) {
+    .box {
+        width: 250px;
+        height: 300px;
+    }
+    .box form {
+        inset: 2px;
+        padding: 30px 15px;
+    }
+    .box form .inputBox {
+        width: 220px;
+        margin-top: 30px;
+    }
+    .box form .inputBox input:valid ~ i,
+    .box form .inputBox input:focus ~ i
+    {
+        height: 40px;
+    }
+    .box::before {
+        width: 240px;
+        height: 320px;
+    }
+    .box::after {
+        width: 240px;
+        height: 320px;
+    }
+    .borderLine::before {
+        width: 280px;
+        height: 320px;
+    }
+    .borderLine::after {
+        width: 280px;
+        height: 320px;
+    }
+}
+@media (max-width: 413px) {
+    .box {
+        width: 380px;
+        height: 400px;
+    }
+    .box form {
+        inset: 2px;
+        padding: 30px 15px;
+    }
+    .box form .inputBox {
+        width: 340px;
+        margin-top: 30px;
+    }
+    .box form .inputBox input:valid ~ i,
+    .box form .inputBox input:focus ~ i
+    {
+        height: 40px;
+    }
+    .box::before {
+        width: 240px;
+        height: 320px;
+    }
+    .box::after {
+        width: 240px;
+        height: 320px;
+    }
+    .borderLine::before {
+        width: 280px;
+        height: 320px;
+    }
+    .borderLine::after {
+        width: 280px;
+        height: 320px;
+    }
+}
+@media (max-width: 350px) {
+    .box {
+        width: 320px;
+        height: 400px;
+    }
+    .box form {
+        inset: 2px;
+        padding: 30px 15px;
+    }
+    .box form .inputBox {
+        width: 280px;
+        margin-top: 30px;
+    }
+    .box form .inputBox input:valid ~ i,
+    .box form .inputBox input:focus ~ i
+    {
+        height: 40px;
+    }
+    .box::before {
+        width: 240px;
+        height: 320px;
+    }
+    .box::after {
+        width: 240px;
+        height: 320px;
+    }
+    .borderLine::before {
+        width: 280px;
+        height: 320px;
+    }
+    .borderLine::after {
+        width: 280px;
+        height: 320px;
+    }
+}
